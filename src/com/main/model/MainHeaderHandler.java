@@ -1,5 +1,5 @@
 
-package com.sig.model;
+package com.main.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,35 +13,35 @@ import java.util.Date;
 
 //class and constructor
 public class MainHeaderHandler {
-    private int num;
+    private int number;
     private String customer;
-    private Date invDate;
+    private Date invoiceDate;
     private ArrayList<MainLineHandler> lines;
     private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
     public MainHeaderHandler() {
     }
 
-    public MainHeaderHandler(int num, String customer, Date invDate) {
-        this.num = num;
+    public MainHeaderHandler(int num, String customer, Date invoiceDate) {
+        this.number = num;
         this.customer = customer;
-        this.invDate = invDate;
+        this.invoiceDate = invoiceDate;
     }
 
-    public Date getInvDate() {
-        return invDate;
+    public Date getInvoiceDate() {
+        return invoiceDate;
     }
 
-    public void setInvDate(Date invDate) {
-        this.invDate = invDate;
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
     }
 
-    public int getNum() {
-        return num;
+    public int getNumber() {
+        return number;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getCustomer() {
@@ -76,7 +76,7 @@ public class MainHeaderHandler {
 
     @Override
     public String toString() {
-        return num + "," + df.format(invDate) + "," + customer;
+        return number + "," + df.format(invoiceDate) + "," + customer;
     }
     
 }

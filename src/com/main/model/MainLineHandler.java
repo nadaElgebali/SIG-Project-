@@ -1,5 +1,5 @@
 
-package com.sig.model;
+package com.main.model;
 
 /**
  *
@@ -7,7 +7,7 @@ package com.sig.model;
  */
 
 public class MainLineHandler {
-    private String item;
+    private String Name;
     private double price;
     private int count;
     private MainHeaderHandler header;
@@ -15,8 +15,8 @@ public class MainLineHandler {
     public MainLineHandler() {
     }
 
-    public MainLineHandler(String item, double price, int count, MainHeaderHandler header) {
-        this.item = item;
+    public MainLineHandler(String Name, double price, int count, MainHeaderHandler header) {
+        this.Name = Name;
         this.price = price;
         this.count = count;
         this.header = header;
@@ -30,12 +30,12 @@ public class MainLineHandler {
         this.header = header;
     }
 
-    public String getItem() {
-        return item;
+    public String getName() {
+        return Name;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public double getPrice() {
@@ -60,7 +60,7 @@ public class MainLineHandler {
 
     @Override
     public String toString() {
-        return header.getNum() + "," + item + "," + price + "," + count;
+        return header.getNumber() + "," + Name + "," + price + "," + count;
     }
 
     

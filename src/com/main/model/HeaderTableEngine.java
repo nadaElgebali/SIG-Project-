@@ -1,7 +1,7 @@
 
-package com.sig.model;
+package com.main.model;
 
-import com.sig.view.GUIFrame;
+import com.main.view.GUIFrame;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
@@ -12,7 +12,7 @@ import javax.swing.table.AbstractTableModel;
 public class HeaderTableEngine extends AbstractTableModel {
 
     private ArrayList<MainHeaderHandler> invoicesArray;
-    private String[] columns = {"Invoice Number", "Invoice Date", "Customer Name", "Grand Total"};
+    private String[] columns = {"Reference Number", "Date", "Customer", "Grand Total"};
     
     public HeaderTableEngine(ArrayList<MainHeaderHandler> invoicesArray) {
         this.invoicesArray = invoicesArray;
@@ -32,8 +32,8 @@ public class HeaderTableEngine extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         MainHeaderHandler inv = invoicesArray.get(rowIndex);
         switch (columnIndex) {
-            case 0: return inv.getNum();
-            case 1: return GUIFrame.dateFormat.format(inv.getInvDate());
+            case 0: return inv.getNumber();
+            case 1: return GUIFrame.dateFormat.format(inv.getInvoiceDate());
             case 2: return inv.getCustomer();
             case 3: return inv.getInvoiceTotal();
         }

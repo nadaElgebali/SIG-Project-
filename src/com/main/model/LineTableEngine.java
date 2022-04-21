@@ -1,5 +1,5 @@
 
-package com.sig.model;
+package com.main.model;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
@@ -11,7 +11,7 @@ import javax.swing.table.AbstractTableModel;
 public class LineTableEngine extends AbstractTableModel {
 
     private ArrayList<MainLineHandler> linesArray;
-    private String[] columns = {"Item Name", "Unit Price", "Count", "Line Total"};
+    private String[] columns = {"Name", "Price", "Count", "Total"};
 
     public LineTableEngine(ArrayList<MainLineHandler> linesArray) {
         this.linesArray = linesArray;
@@ -35,7 +35,7 @@ public class LineTableEngine extends AbstractTableModel {
             MainLineHandler line = linesArray.get(rowIndex);
             switch (columnIndex) {
                 case 0:
-                    return line.getItem();
+                    return line.getName();
                 case 1:
                     return line.getPrice();
                 case 2:
